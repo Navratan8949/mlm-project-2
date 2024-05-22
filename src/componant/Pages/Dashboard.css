@@ -1,0 +1,55 @@
+.dashboard_row-1_inner {
+    display: flex;
+    /* width: ; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.counter_number_div_1,
+.counter_number_div_2,
+.counter_number_div_3,
+.counter_number_div_4 {
+    width: 250px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.counter_number_div_1{
+    background-color: aqua;
+}
+
+.counter_number_div_2 {
+    background-color: rgb(0, 255, 13);
+
+}
+.counter_number_div_3{
+    background-color: rgb(255, 115, 0);
+
+}
+.counter_number_div_4{
+    background-color: rgb(255, 230, 0);
+
+}
+
+.counter_number{
+    font-size: 2rem;
+}
+
+@media (max-width:430px){
+    .counter_number_div_1,
+.counter_number_div_2,
+.counter_number_div_3,
+.counter_number_div_4 {
+    width: 100%;
+    height: 250px;
+}
+}

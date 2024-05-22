@@ -1,0 +1,34 @@
+  <div className="forgot-password-form">
+            <div className="inner-form">
+                <h2>Forgot Password</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-with-icon">
+                        <Email style={{ color: "black", fontSize: "20px" }} className="icon" />
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder='Email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className="input-with-icon">
+                        <Lock style={{ color: "black", fontSize: "20px" }} className="icon" />
+                        <input
+                            type="password"
+                            id="new-password"
+                            name="new-password"
+                            placeholder='New Password'
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                        />
+                        
+                    </div>
+                    <div className='buttons'>
+                        <button type='submit'>Submit</button>
+                        <span>Remembered? <a onClick={() => navigate('/login')}>Login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>

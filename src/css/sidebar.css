@@ -1,0 +1,104 @@
+.sidebar-items {
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: white;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 0px 0px 14px 0px;
+}
+
+
+.sidebar-items::-webkit-scrollbar {
+    width: 5px;
+    /* Width of vertical scrollbar */
+}
+
+.sidebar-items::-webkit-scrollbar-track {
+    background: transparent;
+    /* Track color */
+}
+
+.sidebar-items::-webkit-scrollbar-thumb {
+    /* background-color: transparent; */
+    background-color: rgba(219, 211, 211, 0.5);
+    /* Thumb color */
+    /* Thumb color */
+    border-radius: 4px;
+    /* Roundness of the thumb */
+}
+
+.sidebar-items::-webkit-scrollbar-thumb:hover {
+    /* background-color: transparent; */
+    background-color: rgba(92, 92, 92, 0.7);
+    /* Thumb color */
+
+    /* Thumb color on hover */
+}
+
+.sidebar-header {
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(55, 55, 58));
+    color: white;
+
+}
+
+
+.main-navbar {
+    backdrop-filter: saturate(200%) blur(1.875rem) !important;
+    background-color: rgba(255, 255, 255, 0.0001) !important;
+    /* Adjust alpha value for transparency */
+    color: black !important;
+    z-index: 1000;
+}
+
+/* @media (max-width:430px){
+
+    .side-drawer{
+    display: none;
+    }
+} */
+
+/* .sidebar-items-1 {
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: white;
+    height: 100vh !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 0px 0px 14px 0px !important;
+} */
+
+
+.sidebar1-side-container {
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: white;
+    height: 100vh !important;
+    /* height: 500px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* border-radius: 20px 0px 20px 0px; */
+}
+
+
+.sidebar1-side-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar1-side-container::-webkit-scrollbar-track {
+    background: transparent;
+    
+}
+
+.sidebar1-side-container::-webkit-scrollbar-thumb {
+    background-color: rgba(241, 223, 223, 0.5);
+    border-radius: 4px;
+}
+
+.sidebar1-side-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(92, 92, 92, 0.7);
+}
+
+
+
+/* .css-d9ml5t-MuiDrawer-docked .MuiDrawer-paper{
+    margin-left: 15px !important;
+   
+} */
