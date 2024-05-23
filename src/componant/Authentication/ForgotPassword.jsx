@@ -54,7 +54,7 @@ const ForgotPassword = () => {
     return (
         <div className="forgot-password-form">
             <div className="inner-from">
-                <h2>Login</h2>
+                <h2>Forgot Password</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="inputs">
                         <div className="input-with-icon">
@@ -90,7 +90,7 @@ const ForgotPassword = () => {
 
                         <div className='buttons'>
                             <button type='submit'>Submit</button>
-                            <span>Remembered? <a onClick={() => navigate('/login')} style={{color:"red"}}>Login</a></span>
+                            <span>Remembered? <a onClick={() => navigate('/login')} style={{color:"rgb(21, 255, 0)"}}>Login</a></span>
                         </div>
                     </div>
                 </form>

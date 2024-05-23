@@ -1,19 +1,22 @@
 {
   "users": [
     {
-      "id": "370d",
-      "email": "user123@gmail.com",
-      "password": "1234512345"
+      "id": "b25d",
+      "name": "Rahul Kumar",
+      "email": "rahulkumar@45gmail.com",
+      "password": "rahul4567"
     },
     {
-      "id": "ea97",
-      "email": "nav12@gmail.com",
-      "password": "1234321"
+      "id": "35a5",
+      "name": "suresh",
+      "email": "suresh@34gmail.com",
+      "password": "rahul kumar"
     },
     {
-      "id": "f7c3",
-      "email": "admin@gmail.com",
-      "password": "admin1212"
+      "id": "b0d4",
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "123123"
     }
   ]
 }

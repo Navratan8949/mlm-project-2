@@ -44,11 +44,18 @@
 
 .main-navbar {
     backdrop-filter: saturate(200%) blur(1.875rem) !important;
+    box-shadow: none !important;
     background-color: rgba(255, 255, 255, 0.0001) !important;
     /* Adjust alpha value for transparency */
     color: black !important;
     z-index: 1000;
 }
+
+.componant_here {
+    background-color: #EFF1F4 !important;
+    height: 100vh;
+}
+
 
 /* @media (max-width:430px){
 
@@ -84,7 +91,7 @@
 
 .sidebar1-side-container::-webkit-scrollbar-track {
     background: transparent;
-    
+
 }
 
 .sidebar1-side-container::-webkit-scrollbar-thumb {

@@ -16,21 +16,20 @@ const Login = () => {
 
         if (validate()) {
 
-            // console.log('Email:', username);
-            // console.log('Password:', password);
-
             axios.get('http://localhost:5000/users')
                 .then(res => {
                     const user = res.data.find(user => user.email === username);
 
                     if (!user) {
                         toast.error("Please enter a valid username");
+
                     } else if (user.password === password) {
                         toast.success("Success");
-                        localStorage.setItem('user', JSON.stringify(user)); // Save user data to local storage
+                        localStorage.setItem('user', JSON.stringify(user));
                         navigate('/');
                     } else {
                         toast.error("Please enter a valid password");
+
                     }
                 })
                 .catch(err => {
@@ -38,7 +37,6 @@ const Login = () => {
                 });
         }
     }
-
     const validate = () => {
         let isValid = true;
 
@@ -61,6 +59,7 @@ const Login = () => {
 
     return (
         <div className="login-form">
+
             <div className="inner-from">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
@@ -100,13 +99,17 @@ const Login = () => {
 
                         <div className='buttons'>
                             <button type='submit'>Submit</button>
-                            <span>Need an Account ? <a onClick={() => navigate('/SignUp')}>Sign Up</a></span>
+                            <span>Need an Account ? <a className='For_sign_up' onClick={() => navigate('/SignUp')}>Sign Up</a></span>
                         </div>
                     </div>
                 </form>
             </div>
+
         </div>
     );
 };
 
 export default Login;
+
+
+

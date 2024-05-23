@@ -7,6 +7,26 @@
     padding: 0px 20px;
 }
 
+.inputs .forget-password{
+    cursor: pointer;
+
+    &:hover{
+        color: rgb(21, 255, 0);
+    }
+}
+
+.For_sign_up:hover{
+    color: rgb(21, 255, 0);
+
+}
+
+
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .inner-from {
     padding: 40px;

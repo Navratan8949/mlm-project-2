@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { toast } from "react-toastify";
 import { useEffect } from 'react';
 
@@ -23,44 +22,33 @@ export default function AccountMenu() {
     };
 
 
-//---------------
+    //---------------
 
-useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            navigate('/login');
+        }
+    }, [navigate]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('user'); // Remove user data from local storage
+        toast.success("User logged out");
         navigate('/login');
-    }
-}, [navigate]);
+    };
 
-const handleLogout = () => {
-    localStorage.removeItem('user'); // Remove user data from local storage
-    toast.success("User logged out");
-    navigate('/login');
-};
-
-
-//      const handleLogout = () => {
-//     const user = JSON.parse(localStorage.getItem('user'));
-//     if (user) {
-//         axios.delete(`http://localhost:5000/users/${user.id}`)
-//             .then(res => {
-//                 toast.success("User logged out and data removed");
-//                 localStorage.removeItem('user');
-//                 navigate('/login');
-//             })
-//             .catch(err => {
-//                 toast.error('Logout failed due to: ' + err.message);
-//             });
-//     }
-// };
-
-
-
-
+const ProfilePage = () =>{
+    setAnchorEl(null);
+navigate('/Profile')
+}
 
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userInitial = user ? user.name.charAt(0).toUpperCase() : ''; // Get the first letter of the user's name
+
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -73,7 +61,8 @@ const handleLogout = () => {
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                        <Avatar sx={{ width: 32, height: 32, mr:'5px' }}>{userInitial}</Avatar>
+                        {user && <span>{user.name}</span>}
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -112,25 +101,13 @@ const handleLogout = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={ProfilePage }>
                     <Avatar /> Profile
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                     <Avatar /> My account
                 </MenuItem>
                 <Divider />
-                {/* <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <PersonAdd fontSize="small" />
-                    </ListItemIcon>
-                    Add another account
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <Settings fontSize="small" />
-                    </ListItemIcon>
-                    Settings
-                </MenuItem> */}
                 <MenuItem onClick={handleLogout} >
                     <ListItemIcon>
                         <Logout fontSize="small" />

@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { Email, Lock, Visibility, VisibilityOff } from '@mui/icons-material';
+import { Email, Lock, Person, Visibility, VisibilityOff } from '@mui/icons-material';
 
 const Register = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -17,15 +18,29 @@ const Register = () => {
     e.preventDefault();
 
     if (validate()) {
-      // Log email and password to the console
-      console.log('Email:', email);
-      console.log('Password:', password);
-
-      // Assuming your backend is ready to accept POST requests at this endpoint
-      axios.post('http://localhost:5000/users', { email, password })
+      axios.get('http://localhost:5000/users')
         .then(res => {
-          toast.success("Registration successful" );
-          navigate('/login');
+          const userExists = res.data.find(user => user.email === email);
+          if (userExists) {
+            toast.error("User already exists");
+          } else {
+            // Prepare user data
+            const userData = {
+              name: name,
+              email: email,
+              password: password
+            };
+
+            // Send user data to backend
+            axios.post('http://localhost:5000/users', userData)
+              .then(res => {
+                toast.success("Registration successful");
+                navigate('/login');
+              })
+              .catch(err => {
+                toast.error('Registration failed due to: ' + err.message);
+              });
+          }
         })
         .catch(err => {
           toast.error('Registration failed due to: ' + err.message);
@@ -35,6 +50,11 @@ const Register = () => {
 
   const validate = () => {
     let isValid = true;
+
+    if (name === '' || name === null) {
+      isValid = false;
+      toast.warning('Please enter name');
+    }
 
     if (email === '' || email === null) {
       isValid = false;
@@ -124,9 +144,22 @@ const Register = () => {
               </div>
             </div>
 
+            <div className="input-with-icon">
+              <Person style={{ color: "black", fontSize: "20px" }} className="icon" />
+              <input
+                 type="text"
+                 id="name"
+                 name="name"
+                 placeholder='Name'
+                 value={name}
+                 onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            
+
             <div className='buttons'>
               <button type='submit'>Submit</button>
-              <span>Need an Account ? <a onClick={() => navigate('/SignUp')}>Sign Up</a></span>
+              <span>Have an Account ? <a className='For_sign_up' onClick={() => navigate('/Login')}>Login</a></span>
             </div>
           </div>
         </form>
@@ -136,3 +169,12 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
+
+// axios.post('http://localhost:5000/users', { email, password })
+//   .then(res => {
+//     toast.success("Registration successful" );
+//     navigate('/login');
+//   })

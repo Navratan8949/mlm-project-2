@@ -5,7 +5,25 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    margin-top: 30px;
 }
+
+/* .dashboard_main_div{
+
+    background-color: #EFF1F4 !important;   
+} */
+
+.loading_spinner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .loading_spinner {
+    color: #3f51b5; /* Customize spinner color if needed */
+  }
+  
 
 .counter_number_div_1,
 .counter_number_div_2,

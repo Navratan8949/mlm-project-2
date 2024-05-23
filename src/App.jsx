@@ -15,6 +15,10 @@ import { ToastContainer } from 'react-toastify'
 import ForgotPassword from './componant/Authentication/ForgotPassword'
 
 function App() {
+
+  const user = JSON.parse(localStorage.getItem('user'));
+  
+
   return (
     <>
       {/* Make sure you have only one Router component wrapping your Routes */}
@@ -29,7 +33,7 @@ function App() {
           <Route path='/*' element={<Layout />} >
             <Route path='' element={<Dashboard />} />
             <Route path='Dashboard' element={<Dashboard />} />
-            <Route path='Profile' element={<Profile/>} />
+            <Route path='Profile' element={<Profile user={user}/>} />
           </Route>
 
         </Routes>
