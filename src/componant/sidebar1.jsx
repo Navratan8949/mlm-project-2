@@ -30,6 +30,7 @@ import AccountMenu from './useroption';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import sparktech from "../assets/sparktech-logo.png"
 
 const drawerWidth = 240;
 
@@ -121,7 +122,7 @@ function ResponsiveDrawer(props) {
       <Drawer style={{ marginLeft: "10px" }} variant="permanent" open={open} className='side-drawer'>
         <div className="sidebar1-side-container" >
           <DrawerHeader className='sidebar-header'>
-            <h3>Radhe Radhe</h3>
+            <img width={'150px'} src={sparktech} alt="" />
           </DrawerHeader>
           <Divider sx={{ background: "white" }} />
           <List >

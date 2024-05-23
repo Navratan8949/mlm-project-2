@@ -1,22 +1,10 @@
 {
   "users": [
     {
-      "id": "b25d",
-      "name": "Rahul Kumar",
-      "email": "rahulkumar@45gmail.com",
-      "password": "rahul4567"
-    },
-    {
-      "id": "35a5",
-      "name": "suresh",
-      "email": "suresh@34gmail.com",
-      "password": "rahul kumar"
-    },
-    {
-      "id": "b0d4",
-      "name": "user",
-      "email": "user@gmail.com",
-      "password": "123123"
+      "id": "ffa1",
+      "name": "Navratan",
+      "email": "navratan@gmail.com",
+      "password": "navratan8949"
     }
   ]
 }
