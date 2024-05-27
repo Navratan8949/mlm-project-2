@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
 
     if (validate()) {
-      axios.get('http://localhost:5000/users')
+      axios.get('/users')
         .then(res => {
           const userExists = res.data.find(user => user.email === email);
           if (userExists) {
@@ -32,7 +32,7 @@ const Register = () => {
             };
 
             // Send user data to backend
-            axios.post('http://localhost:5000/users', userData)
+            axios.post('/users', userData)
               .then(res => {
                 toast.success("Registration successful");
                 navigate('/login');

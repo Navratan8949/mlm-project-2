@@ -125,11 +125,11 @@ function ResponsiveDrawer(props) {
             <img width={'150px'} src={sparktech} alt="" />
           </DrawerHeader>
           <Divider sx={{ background: "white" }} />
-          <List >
+          <List>
             {['DashBoard'].map((text, index) => (
               <ListItem key={text} disablePadding sx={{ display: 'block' }}>
                 <ListItemButton
-                  onClick={() => navigate('/Dashboard')}
+                  onClick={() => navigate('/DashBoard')}
                   sx={{
                     minHeight: 48,
                     justifyContent: open ? 'initial' : 'center',
@@ -176,6 +176,33 @@ function ResponsiveDrawer(props) {
               </ListItem>
             ))}
           </List>
+          <List >
+            {['Table Data'].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
+                  onClick={() => navigate('/TableData')}
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          
+         
           <List>
             <Section />
           </List>
@@ -209,7 +236,7 @@ function ResponsiveDrawer(props) {
             position="fixed"
             sx={{
               borderRadius: "0px 0px 0px 5px",
-              width: { sm: `calc(98% - ${drawerWidth}px)` },
+              width: { sm: `calc(100% - ${drawerWidth}px)` },
               ml: { sm: `${drawerWidth}px` },
             }}
           >

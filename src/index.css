@@ -1,3 +1,7 @@
 a{
     cursor: pointer;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

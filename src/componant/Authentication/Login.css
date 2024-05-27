@@ -20,6 +20,10 @@
 
 }
 
+.buttons button{
+    border: 1px solid white;
+}
+
 
 .spinner-container {
     position: absolute;

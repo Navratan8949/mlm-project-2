@@ -16,7 +16,7 @@ const Login = () => {
 
         if (validate()) {
 
-            axios.get('http://localhost:5000/users')
+            axios.get('/users')
                 .then(res => {
                     const user = res.data.find(user => user.email === username);
 

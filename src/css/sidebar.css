@@ -36,46 +36,33 @@
 }
 
 .sidebar-header {
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(55, 55, 58));
+    /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(55, 55, 58)); */
+    background-color: #262932;
     color: white;
 
 }
+
 
 
 .main-navbar {
     backdrop-filter: saturate(200%) blur(1.875rem) !important;
     box-shadow: none !important;
-    background-color: rgba(255, 255, 255, 0.0001) !important;
+    /* background-color: rgba(255, 255, 255, 0.0001) !important; */
+    background-color: #262932 !important;
     /* Adjust alpha value for transparency */
-    color: black !important;
+    color: white !important;
     z-index: 1000;
 }
 
 .componant_here {
     background-color: #EFF1F4 !important;
-    height: 100vh;
+    height: auto;
 }
 
 
-/* @media (max-width:430px){
-
-    .side-drawer{
-    display: none;
-    }
-} */
-
-/* .sidebar-items-1 {
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
-    color: white;
-    height: 100vh !important;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-radius: 0px 0px 14px 0px !important;
-} */
-
-
 .sidebar1-side-container {
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25)); */
+    background-color: #262932;
     color: white;
     height: 100vh !important;
     /* height: 500px; */

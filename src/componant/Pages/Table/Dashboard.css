@@ -14,10 +14,10 @@
 } */
 
 .loading_spinner_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 75vh !important;
   }
   
   .loading_spinner {

@@ -62,7 +62,7 @@ navigate('/Profile')
                         aria-expanded={open ? 'true' : undefined}
                     >
                         <Avatar sx={{ width: 32, height: 32, mr:'5px' }}>{userInitial}</Avatar>
-                        {user && <span>{user.name}</span>}
+                        {user && <span className=' text-white'>{user.name}</span>}
                     </IconButton>
                 </Tooltip>
             </Box>

@@ -9,49 +9,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
 import AvTimerIcon from '@mui/icons-material/AvTimer';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-;
 import IconButton from '@mui/material/IconButton';
-
 import MoveUpIcon from '@mui/icons-material/MoveUp';
-
-// import Navbar from './Navbar';
-
 import {  useNavigate } from 'react-router-dom';
-
-
-// import Dashboard from './DashBoard';
-// import AllDeposite from '../Section-in-Sections/AllDeposite';
-// import ApprovedDeposite from '../Section-in-Sections/ApprovedDeposite';
-// import PendingDeposite from '../Section-in-Sections/PendingDeposite';
-// import RejectDeposite from '../Section-in-Sections/RejectDeposite';
-// import InvestmentHistory from '../Section-in-Sections/InvestmentHistory';
-// import AdminInvestmentHistory from '../Section-in-Sections/AdminInvestmentHistory';
-// import MyInvestment from '../Section-in-Sections/MyInvestment';
-// import FundTransfers from '../Section-in-Sections/FundTransfers';
-// import UserTransferHistroy from '../Section-in-Sections/UserTransferHistroy';
-// import AdminTransferHistory from '../Section-in-Sections/AdminTransferHistory';
-// import AllUser from '../Section-in-Sections/AllUser';
-// import ActiveUser from '../Section-in-Sections/ActiveUser';
-// import InActiveUser from '../Section-in-Sections/In-ActiveUser';
-// import BlockUser from '../Section-in-Sections/BlockUser';
-// import MyDirectTeam from '../Section-in-Sections/MyDirectTeam';
-// import ROIIncome from '../Section-in-Sections/ROI-Income';
-// import LevelIncome from '../Section-in-Sections/Level-Income';
-// import TotalIncome from '../Section-in-Sections/Total-Income';
-// import RewardIncome from '../Section-in-Sections/Reward-Income';
-// import WalletHistory from '../Section-in-Sections/Wallet-History';
-// import SendRequest from '../Section-in-Sections/Send-Request';
-// import Transation from '../Sections/Transaction';
-// import Profile from './Profile';
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-
 
 
 
