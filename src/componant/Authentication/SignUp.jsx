@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
 
     if (validate()) {
-      axios.get('/users')
+      axios.get('http://localhost:5000/users')
         .then(res => {
           const userExists = res.data.find(user => user.email === email);
           if (userExists) {
@@ -32,7 +32,7 @@ const Register = () => {
             };
 
             // Send user data to backend
-            axios.post('/users', userData)
+            axios.post('http://localhost:5000/users', userData)
               .then(res => {
                 toast.success("Registration successful");
                 navigate('/login');
@@ -90,7 +90,7 @@ const Register = () => {
   return (
     <div className="SignUp-form">
       <div className="inner-from">
-        <h2>Register</h2>
+        <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="inputs">
             <div className="input-with-icon">
@@ -169,12 +169,3 @@ const Register = () => {
 };
 
 export default Register;
-
-
-
-
-// axios.post('http://localhost:5000/users', { email, password })
-//   .then(res => {
-//     toast.success("Registration successful" );
-//     navigate('/login');
-//   })

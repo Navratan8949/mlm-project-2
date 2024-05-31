@@ -907,9 +907,6 @@ height: 136vh;
     }
 }
 
-.card-title h4 {
-    color: #999A9D !important;
-}
 
 
 body.dark-only .page-wrapper .page-body-wrapper .page-body .card:not(.email-body).widget-1 {

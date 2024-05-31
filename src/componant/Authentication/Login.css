@@ -7,6 +7,11 @@
     padding: 0px 20px;
 }
 
+.inner-from h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+
 .inputs .forget-password{
     cursor: pointer;
 
@@ -22,6 +27,8 @@
 
 .buttons button{
     border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -6px gold;
 }
 
 

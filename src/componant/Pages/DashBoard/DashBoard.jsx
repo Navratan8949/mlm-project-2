@@ -251,12 +251,7 @@ const DashBoard = () => {
                         <Home sx={{ mr: 0.5 }} fontSize="medium" />
                         DashBoard
                     </Typography>
-                    <Typography
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="text.primary"
-                    >
-                        Breadcrumb
-                    </Typography>
+                
                 </Breadcrumbs>
             </div>
 

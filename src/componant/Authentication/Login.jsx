@@ -61,7 +61,7 @@ const Login = () => {
         <div className="login-form">
 
             <div className="inner-from">
-                <h2>Login</h2>
+                <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="inputs">
                         <div className="input-with-icon">
@@ -76,7 +76,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <h4 className='forget-password' onClick={() => navigate('/forgot-password')}>Forget Password</h4>
+                        <h4 className='forget-password' onClick={() => navigate('/forgot-password')}>Forgot Password</h4>
                         <div className="input-with-icon">
                             <Lock style={{ color: "black", fontSize: "20px" }} className="icon" />
                             <input

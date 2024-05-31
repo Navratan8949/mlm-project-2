@@ -31,6 +31,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import sparktech from "../assets/sparktech-logo.png"
+import { GroupOutlined, HomeOutlined, Person2Outlined, PivotTableChartOutlined } from '@mui/icons-material';
+import { User } from '@nextui-org/react';
 
 const drawerWidth = 240;
 
@@ -143,7 +145,7 @@ function ResponsiveDrawer(props) {
                       justifyContent: 'center',
                     }}
                   >
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    <HomeOutlined sx={{ color: "lightblue",fontSize:"30px" }} />
                   </ListItemIcon>
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>
@@ -169,7 +171,7 @@ function ResponsiveDrawer(props) {
                       justifyContent: 'center',
                     }}
                   >
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    <Person2Outlined  sx={{ color: "lightblue" , fontSize:'30px'}} />
                   </ListItemIcon>
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>
@@ -194,18 +196,43 @@ function ResponsiveDrawer(props) {
                       justifyContent: 'center',
                     }}
                   >
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    
+                    <PivotTableChartOutlined  sx={{ color: "lightblue" , fontSize:'30px'}}/>
                   </ListItemIcon>
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
-          
-         
-          <List>
-            <Section />
+          <List >
+            {['User Section'].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
+                  onClick={() => navigate('/UserSection')}
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <GroupOutlined   sx={{ color: "lightblue" , fontSize:'30px'}}/>
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
+
+          {/* <List>
+            <Section />
+          </List> */}
         </div>
       </Drawer>
     </div>
@@ -223,7 +250,7 @@ function ResponsiveDrawer(props) {
             justifyContent: 'center',
             height: '100vh',
             width: '100vw',
-            background:"black"
+            background: "black"
           }}
         >
           <HashLoader color="#3f51b5" loading={loading} css={override} size={150} />
@@ -259,7 +286,7 @@ function ResponsiveDrawer(props) {
                 Admin DashBoard
               </Typography>
               <Box sx={{ flexGrow: 1 }} />
-              <Box sx={{ display: { xs: 'block', md: 'flex', marginLeft:'10px' } }}>
+              <Box sx={{ display: { xs: 'block', md: 'flex', marginLeft: '10px' } }}>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                   <Badge badgeContent={4} color="error">
                     <MailIcon />
@@ -324,7 +351,7 @@ function ResponsiveDrawer(props) {
             </Drawer>
           </Box>
           <Box
-          className='componant_here'
+            className='componant_here'
             component="main"
             sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
           >

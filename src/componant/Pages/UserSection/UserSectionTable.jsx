@@ -16,13 +16,12 @@ import {
     User,
     Pagination,
 } from "@nextui-org/react";
-import { PlusIcon } from "./PlusIcon";
-import { VerticalDotsIcon } from "./VerticalDotsIcon";
-import { SearchIcon } from "./SearchIcon";
-import { ChevronDownIcon } from "./ChevronDownIcon";
-import { columns, users, statusOptions } from "./data";
-import { capitalize } from "./utils";
-import AddNewUser from "./AddNewUser";
+import { SearchIcon } from "../../data-table/SearchIcon";
+import { ChevronDownIcon } from "../../data-table/ChevronDownIcon";
+import { columns, users, statusOptions } from "../../data-table/data";
+import { capitalize } from "../../data-table/utils";
+import AddNewUser from "../../data-table/AddNewUser";
+import { VerticalDotsIcon } from "../../data-table/VerticalDotsIcon";
 
 const statusColorMap = {
     active: "success",
@@ -30,9 +29,10 @@ const statusColorMap = {
     vacation: "warning",
 };
 
-const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status", "actions"];
 
-export default function TableData() {
+const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status"];
+
+export default function UserSectionTable() {
     const [filterValue, setFilterValue] = React.useState("");
     const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
@@ -106,13 +106,7 @@ export default function TableData() {
                         {user.email}
                     </User>
                 );
-            case "role":
-                return (
-                    <div className="flex flex-col">
-                        <p className="text-bold text-small capitalize">{cellValue}</p>
-                        <p className="text-bold text-tiny capitalize text-default-500">{user.team}</p>
-                    </div>
-                );
+
             case "status":
                 return (
                     <Chip
@@ -124,7 +118,8 @@ export default function TableData() {
                         {cellValue}
                     </Chip>
                 );
-            case "actions":
+
+
                 return (
                     <div className="relative flex  items-center gap-2">
                         {/* <div className="relative flex justify-end items-center gap-2"> */}
@@ -188,31 +183,6 @@ export default function TableData() {
                                     size="sm"
                                     variant="flat"
                                 >
-                                    Status
-                                </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu
-                                disallowEmptySelection
-                                aria-label="Table Columns"
-                                closeOnSelect={false}
-                                selectedKeys={statusFilter}
-                                selectionMode="multiple"
-                                onSelectionChange={setStatusFilter}
-                            >
-                                {statusOptions.map((status) => (
-                                    <DropdownItem key={status.uid} className="capitalize">
-                                        {capitalize(status.name)}
-                                    </DropdownItem>
-                                ))}
-                            </DropdownMenu>
-                        </Dropdown>
-                        <Dropdown>
-                            <DropdownTrigger className="hidden sm:flex">
-                                <Button
-                                    endContent={<ChevronDownIcon className="text-small" />}
-                                    size="sm"
-                                    variant="flat"
-                                >
                                     Columns
                                 </Button>
                             </DropdownTrigger>
@@ -231,14 +201,6 @@ export default function TableData() {
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
-
-                        <AddNewUser />
-                        {/*   <Button
-                            className="bg-foreground text-background "
-                            size="sm"
-                        >
-                            <AddNewUser />
-                        </Button> */}
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -317,7 +279,7 @@ export default function TableData() {
             removeWrapper
             aria-label="Example table with custom cells, pagination and sorting"
             bottomContent={bottomContent}
-            // bottomContentPlacement="outside"
+            bottomContentPlacement="outside"
             checkboxesProps={{
                 classNames: {
                     wrapper: "after:bg-foreground after:text-background text-background",
@@ -343,7 +305,7 @@ export default function TableData() {
                     </TableColumn>
                 )}
             </TableHeader>
-            <TableBody emptyContent={"No users found"} items={sortedItems}>
+            <TableBody c emptyContent={"No users found"} items={sortedItems}>
                 {(item) => (
                     <TableRow key={item.id}>
                         {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}

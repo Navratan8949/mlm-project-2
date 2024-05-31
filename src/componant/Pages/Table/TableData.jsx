@@ -33,7 +33,7 @@ const DataTable = () => {
           sx={{ display: 'flex', alignItems: 'center' }}
           color="text.primary"
         >
-          Breadcrumb
+          TableData
         </Typography>
       </Breadcrumbs>
       {loading ? (

@@ -59,6 +59,10 @@
     height: auto;
 }
 
+/* body{
+    background-color:#EFF1F4 !important;
+} */
+
 
 .sidebar1-side-container {
     /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25)); */
@@ -96,3 +100,9 @@
     margin-left: 15px !important;
    
 } */
+
+
+
+.css-1r7kz78-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{
+    width: 283px !important;
+}
